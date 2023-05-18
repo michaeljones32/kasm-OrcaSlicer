@@ -14,7 +14,12 @@ RUN apt-get update && apt-get upgrade -y
 RUN mkdir -p /opt/orcaSlicer \
     && cd /opt/orcaSlicer \
     && add-apt-repository universe \
-    && apt install libfuse2 libwebkit2gtk-4.0-dev unzip -y \
+    && apt install -y \
+        libfuse2 \
+        libwebkit2gtk-4.0-dev \
+        gstreamer1.0-libav \
+        gstreamer1.0-plugins-bad \
+        unzip \
     && wget $(curl -L -s https://api.github.com/repos/SoftFever/OrcaSlicer/releases/latest | grep -o -E "https://(.*)Linux_ubuntu.zip") \
     && unzip *.zip \
     && chmod +x *.AppImage \
