@@ -17,7 +17,7 @@ jobs:
       with:
         repository: 'SoftFever/OrcaSlicer'
     - name: Set Dockerfile to use Kasm base image
-      run: sed '1cFROM kasmweb/core-ubuntu-focal:1.13.0-rolling' -i Dockerfile
+      run: sed -i '1cFROM kasmweb/core-ubuntu-focal:1.13.0-rolling\nUSER root' Dockerfile
     - name: Set up Docker Buildx
       uses: docker/setup-buildx-action@v2
     - name: Login to GitHub Container Registry
