@@ -20,8 +20,7 @@ RUN mkdir -p /opt/orcaSlicer \
         gstreamer1.0-libav \
         gstreamer1.0-plugins-bad \
         unzip \
-    && wget $(curl -L -s https://api.github.com/repos/SoftFever/OrcaSlicer/releases/latest | grep -o -E "https://(.*)Linux_ubuntu.zip") \
-    && unzip *.zip \
+    && wget $(curl -L -s https://api.github.com/repos/SoftFever/OrcaSlicer/releases/latest | grep -o -E "https://(.*)Linux(.*).AppImage) \
     && chmod +x *.AppImage \
     && ./*.AppImage --appimage-extract \
     && rm *.AppImage \
